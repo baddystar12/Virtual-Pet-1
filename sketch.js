@@ -43,7 +43,7 @@ function writeStock(x){
   } else{
     x = x-1
   }
-  databaase.ref("/").update({
+  database.ref("/").update({
     Food:x
   })
 }
