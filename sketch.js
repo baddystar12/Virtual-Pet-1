@@ -24,7 +24,7 @@ function draw() {
   background(46,139,87);
   if(keyWentDown(UP_ARROW)){
     writeStock(foodS);
-    dog.addImage(happyDog);
+    dog.addImage(happyDogImage);
   }
   drawSprites();
   fill("#ff177c");
@@ -32,7 +32,6 @@ function draw() {
   textSize(15);
   text("Food stock:" +foodStock, 20, 400);
 }
-
 function readStock(data){
   foodS = data.val();
 }
@@ -47,6 +46,3 @@ function writeStock(x){
     Food:x
   })
 }
-
-
-
