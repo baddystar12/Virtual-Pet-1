@@ -1,4 +1,5 @@
-var dog, happyDog, database, foodStock, dogImage, happyDogImage;
+var dog, database, foodStock, dogImage, happyDogImage;
+var foodRemaining = 20;
 
 function preload(){
   dogImage = loadImage("images/dogImg.png");
@@ -22,12 +23,15 @@ function draw() {
   if(keyWentDown(UP_ARROW)){
     writeStock(foodS);
     dog.addImage(happyDogImage);
+    foodRemaining = foodRemaining-1;
+    writeStock(foodRemaining);
   }
   drawSprites();
   fill("#ff177c");
   stroke("#50d4e6");
   textSize(15);
   text("Food stock:" +foodStock, 20, 400);
+  text("Food remaining:"+ foodRemaining, 250, 450);
 }
 function readStock(data){
  foodS = data.val();
